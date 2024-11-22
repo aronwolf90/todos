@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple To-Do app that I use to explore Hotwire Native for Android.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+Setup and start Rails:
+* bin/setup
+* bin/dev
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Setup android:
+* Open the android folder in android studio.
+* Click on the play button to launch it.

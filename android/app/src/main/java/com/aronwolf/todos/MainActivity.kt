@@ -13,7 +13,7 @@ class MainActivity : HotwireActivity() {
     override fun navigatorConfigurations() = listOf(
         NavigatorConfiguration(
             name = "main",
-            startLocation = "https://example.com/",
+            startLocation = "http://10.0.2.2:3000/users",
             navigatorHostId = R.id.main_nav_host
         )
     )
