@@ -13,7 +13,7 @@ class MainActivity : HotwireActivity() {
     override fun navigatorConfigurations() = listOf(
         NavigatorConfiguration(
             name = "main",
-            startLocation = "http://10.0.2.2:3000/users",
+            startLocation = "https://todos.webcloudpower.com",
             navigatorHostId = R.id.main_nav_host
         )
     )

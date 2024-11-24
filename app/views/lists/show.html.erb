@@ -3,8 +3,12 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
+  <% content_for :title, @list.name %>
+
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl flex-none"><%= @list.name %></h1>
+    <% unless turbo_native_app? %>
+      <h1 class="font-bold text-4xl flex-none"><%= @list.name %></h1>
+    <% end %>
     <div class="grow"></div>
     <span class="flex-none flex justify-between items-center space-x-2">
       <%= link_to "Edit", [:edit, @list], class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

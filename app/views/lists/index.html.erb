@@ -6,7 +6,9 @@
   <% content_for :title, "Lists" %>
 
   <div class="flex justify-between items-center mb-4">
-    <h1 class="font-bold text-4xl">Lists</h1>
+    <% unless turbo_native_app? %>
+      <h1 class="font-bold text-4xl">Lists</h1>
+    <% end %>
     <%= link_to "New list", new_list_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
