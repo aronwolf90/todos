@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item.list, notice: "Item was successfully updated."
+      redirect_to @item.list, notice: !params["no_flash"] && "Item was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -50,6 +50,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.expect(item: [ :name ])
+      params.expect(item: [ :name, :checked ])
     end
 end

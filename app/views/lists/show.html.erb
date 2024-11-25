@@ -14,6 +14,10 @@
   <ul class="w-full divide-y divide-gray-200">
     <% @list.items.each do |item| %>
       <li class="flex h-14 items-center">
+        <%= form_with model: item, data: { controller: "form" }, class: "pr-2" do |form| %>
+          <%= form.check_box :checked, data: { action: "form#submit" } %>
+          <input type="hidden" name="no_flash" value=1 />
+        <% end %>
         <div class="flex-none">
           <%= item.name %> 
         </div>

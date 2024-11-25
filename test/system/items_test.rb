@@ -29,6 +29,16 @@ class ItemsTest < ApplicationSystemTestCase
     assert_text "Item was successfully updated"
   end
 
+  test "should check item when click on checked" do
+    visit list_url(@item.list)
+
+    check "item[checked]", match: :first
+
+    wait_until do
+      @item.reload.checked
+    end
+  end
+
   test "should destroy Item" do
     visit list_url(@item.list)
 

@@ -24,9 +24,20 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update item" do
-    patch item_url(@item), params: { item: { name: @item.name } }
+  test "should update item with flash message" do
+    patch item_url(@item), params: { item: { name: "new name" } }
+
     assert_redirected_to list_url(@item.list)
+    assert_equal @item.reload.name, "new name"
+    assert_equal "Item was successfully updated.", flash["notice"]
+  end
+
+  test "should update without flash when no_flash == 1" do
+    patch item_url(@item), params: { item: { checked: true }, no_flash: 1 }
+
+    assert_redirected_to list_url(@item.list)
+    assert_equal @item.reload.checked, true
+    assert_nil flash["notice"]
   end
 
   test "should destroy item" do
