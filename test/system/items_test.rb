@@ -14,28 +14,26 @@ class ItemsTest < ApplicationSystemTestCase
     click_on "Create Item"
 
     assert_text "Item was successfully created"
-    click_on "Back"
   end
 
   test "should update Item" do
     visit list_url(@item.list)
 
     within "ul" do
-      click_on "Edit", match: :first
+      click_on class: "edit", match: :first
     end
 
     fill_in "Name", with: @item.name
     click_on "Update Item"
 
     assert_text "Item was successfully updated"
-    click_on "Back"
   end
 
   test "should destroy Item" do
     visit list_url(@item.list)
 
     within "ul" do
-      click_on "Destroy", match: :first
+      click_on class: "destroy", match: :first
     end
 
     assert_text "Item was successfully destroyed"

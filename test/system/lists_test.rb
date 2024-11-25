@@ -18,23 +18,21 @@ class ListsTest < ApplicationSystemTestCase
     click_on "Create List"
 
     assert_text "List was successfully created"
-    click_on "Back"
   end
 
   test "should update List" do
-    visit list_url(@list)
-    click_on "Edit", match: :first
+    visit lists_url
+    click_on class: "edit", match: :first
 
     fill_in "Name", with: @list.name
     click_on "Update List"
 
     assert_text "List was successfully updated"
-    click_on "Back"
   end
 
   test "should destroy List" do
-    visit list_url(@list)
-    click_on "Destroy", match: :first
+    visit lists_url
+    click_on class: "destroy", match: :first
 
     assert_text "List was successfully destroyed"
   end
