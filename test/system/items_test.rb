@@ -8,7 +8,7 @@ class ItemsTest < ApplicationSystemTestCase
 
   test "should create item" do
     visit list_url(@list)
-    click_on "New item"
+    click_on class: "new"
 
     fill_in "Name", with: @item.name
     click_on "Create Item"

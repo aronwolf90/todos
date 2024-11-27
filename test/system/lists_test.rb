@@ -12,7 +12,7 @@ class ListsTest < ApplicationSystemTestCase
 
   test "should create list" do
     visit lists_url
-    click_on "New list"
+    click_on class: "new"
 
     fill_in "Name", with: @list.name
     click_on "Create List"
