@@ -11,4 +11,31 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
       value
     end
   end
+
+  def slow_connection
+    params = {
+      cmd:    'Network.emulateNetworkConditions',
+      params: {
+        offline:            false,
+        latency:            2000,
+        downloadThroughput: 0,
+        uploadThroughput:   0
+      }
+    }
+    page.driver.browser.send(:bridge).send_command(params)
+
+    yield
+
+    params = {
+      cmd:    'Network.emulateNetworkConditions',
+      params: {
+        offline:            false,
+        latency:            0,
+        downloadThroughput: 0,
+        uploadThroughput:   0
+      }
+    }
+
+    page.driver.browser.send(:bridge).send_command(params)
+  end
 end

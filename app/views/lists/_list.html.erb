@@ -1,0 +1,12 @@
+<li class="flex h-14 items-center">
+  <div class="flex-none">
+    <%= list.name %> 
+  </div>
+  <div class="grow">
+  </div>
+  <div class="flex justify-between items-center space-x-1">
+    <%= show_button list %>
+    <%= edit_button [:edit, list] %>
+    <%= delete_button list %>
+  </div>
+</li>

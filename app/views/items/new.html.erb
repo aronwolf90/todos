@@ -1,11 +1,5 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <% content_for :title, "Editing item" %>
+<% content_for :title, "Editing item" %>
 
-  <% unless turbo_native_app? %>
-    <h1 class="font-bold text-4xl">New item</h1>
-  <% end %>
+<%= render "form", item: @item %>
 
-  <%= render "form", item: @item %>
-
-  <%= link_to "Back to items", @list, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-</div>
+<%= link_to "Back to items", @list, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

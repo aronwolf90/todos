@@ -32,10 +32,16 @@ class ItemsTest < ApplicationSystemTestCase
   test "should check item when click on checked" do
     visit list_url(@item.list)
 
-    check "item[checked]", match: :first
+    within "li", match: :first do
+      check "item[checked]"
 
-    wait_until do
-      @item.reload.checked
+      slow_connection do
+        assert_selector ".status:not(.hidden)"
+      end
+
+      wait_until do
+        @item.reload.checked
+      end
     end
   end
 
