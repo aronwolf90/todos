@@ -14,7 +14,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   def slow_connection
     params = {
-      cmd:    'Network.emulateNetworkConditions',
+      cmd: "Network.emulateNetworkConditions",
       params: {
         offline:            false,
         latency:            2000,
@@ -27,7 +27,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     yield
 
     params = {
-      cmd:    'Network.emulateNetworkConditions',
+      cmd: "Network.emulateNetworkConditions",
       params: {
         offline:            false,
         latency:            0,
