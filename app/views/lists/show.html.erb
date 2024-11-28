@@ -1,10 +1,10 @@
 <% content_for :title, @list.name %>
 
-<%= new_link_to new_list_item_path(@list) %>
-
 <ul class="w-full divide-y divide-gray-200">
   <% @list.items.each do |item| %>
     <%= render "item", item: item %>
   <% end %>
 </ul>
 <div class="h-14"></div>
+
+<%= new_button new_list_item_path(@list) %>
