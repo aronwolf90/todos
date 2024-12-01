@@ -6,6 +6,7 @@ plugins {
 android {
     namespace = "com.aronwolf.todos"
     compileSdk = 35
+    flavorDimensions += "default"
 
     defaultConfig {
         applicationId = "com.aronwolf.todos"
@@ -32,6 +33,20 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    productFlavors {
+        create("remoteServer") {
+            dimension = "default"
+            isDefault = true
+            buildConfigField("String", "BASE_URL", "\"https://todos.webcloudpower.com\"")
+        }
+        create("localServer") {
+            dimension = "default"
+            applicationIdSuffix = "localServer"
+            versionNameSuffix = "-localServer"
+            buildConfigField("String", "BASE_URL", "\"http://10.0.2.2:3000\"")
+        }
     }
 }
 

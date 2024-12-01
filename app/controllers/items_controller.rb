@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_breadcrumbs
   before_action :set_list, only: %i[ new create ]
   before_action :set_item, only: %i[ show edit update destroy ]
 
@@ -51,5 +52,11 @@ class ItemsController < ApplicationController
 
     def item_params
       params.expect(item: [ :name, :checked ])
+    end
+
+    def set_breadcrumbs
+      @breadcrumbs = [
+        { title: "Lists", path: root_path }
+      ]
     end
 end

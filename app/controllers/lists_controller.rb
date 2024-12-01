@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  before_action :set_breadcrumbs, only: %i[ show new edit update ]
   before_action :set_list, only: %i[ show edit update destroy ]
 
   # GET /lists or /lists.json
@@ -62,5 +63,11 @@ class ListsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def list_params
       params.expect(list: [ :name ])
+    end
+
+    def set_breadcrumbs
+      @breadcrumbs = [
+        { title: "Lists", path: root_path }
+      ]
     end
 end

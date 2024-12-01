@@ -1,9 +1,7 @@
-<li class="flex h-14 items-center">
-  <div class="flex-none">
+<li class="flex h-14 items-center hover:bg-gray-100">
+  <%= link_to list, class: "flex-none grow" do %>
     <%= list.name %> 
-  </div>
-  <div class="grow">
-  </div>
+  <% end %>
   <div class="flex justify-between items-center space-x-1">
     <%= show_button list %>
     <%= edit_button [:edit, list] %>

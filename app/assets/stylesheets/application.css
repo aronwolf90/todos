@@ -8,10 +8,3 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
-
-@import "bootstrap-icons-1.11.3/font/bootstrap-icons";
-@font-face {
-  font-family: "bootstrap-icons-1.11.3";
-  src: font-url("bootstrap-icons-1.11.3/font/fonts/bootstrap-icons.woff2") format("woff2"),
-    font-url("bootstrap-icons-1.11.3/font/fonts/bootstrap-icons.woff") format("woff");
-}

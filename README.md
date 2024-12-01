@@ -11,3 +11,9 @@ Setup and start Rails:
 Setup android:
 * Open the android folder in android studio.
 * Click on the play button to launch it.
+
+## Run android against local server
+
+* Open build variants (left panel) on Android Studio.
+* Select `localServer`.
+* Click on the play button.
