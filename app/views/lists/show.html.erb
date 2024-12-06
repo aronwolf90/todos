@@ -1,8 +1,8 @@
 <% content_for :title, @list.name %>
 
-<ul class="w-full divide-y divide-gray-200">
+<ul class="items w-full divide-y divide-gray-200">
   <% @list.items.each do |item| %>
-    <%= render "item", item: item %>
+    <%= render item %>
   <% end %>
 </ul>
 <div class="h-14"></div>

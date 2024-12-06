@@ -1,0 +1,17 @@
+<div data-controller="dropdown" class="relative">
+  <button type="button" data-action="dropdown#toggle click@window->dropdown#hide" class="p-2 p-2 rounded-lg hover:bg-gray-200 dots-menu">
+    <%= icon "three-dots-vertical" %>
+  </button>
+
+  <div
+    data-dropdown-target="menu"
+    class="hidden transition transform origin-top-right absolute right-0 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+    data-transition-enter-from="opacity-0 scale-95"
+    data-transition-enter-to="opacity-100 scale-100"
+    data-transition-leave-from="opacity-100 scale-100"
+    data-transition-leave-to="opacity-0 scale-95"
+  >
+  <%= link_to "Edit", [:edit, item], "data-action": "dropdown#toggle", class: "edit block px-4 py-2 hover:bg-gray-100" %>
+  <%= button_to "Delete", item, "data-action": "dropdown#toggle", method: :delete, class: "destroy block px-4 py-2 hover:bg-gray-100 w-full text-left text-red-600" %>
+  </div>
+</div>

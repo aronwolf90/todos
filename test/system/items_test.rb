@@ -20,6 +20,7 @@ class ItemsTest < ApplicationSystemTestCase
     visit list_url(@item.list)
 
     within "ul" do
+      click_on class: "dots-menu", match: :first
       click_on class: "edit", match: :first
     end
 
@@ -32,7 +33,7 @@ class ItemsTest < ApplicationSystemTestCase
   test "should check item when click on checked" do
     visit list_url(@item.list)
 
-    within "li", match: :first do
+    within ".items > li", match: :first do
       check "item[checked]"
 
       slow_connection do
@@ -49,6 +50,7 @@ class ItemsTest < ApplicationSystemTestCase
     visit list_url(@item.list)
 
     within "ul" do
+      click_on class: "dots-menu", match: :first
       click_on class: "destroy", match: :first
     end
 

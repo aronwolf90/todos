@@ -3,8 +3,6 @@
     <%= list.name %> 
   <% end %>
   <div class="flex justify-between items-center space-x-1">
-    <%= show_button list %>
-    <%= edit_button [:edit, list] %>
-    <%= delete_button list %>
+    <%= render "menu", list: list %>
   </div>
 </li>

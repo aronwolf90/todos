@@ -10,7 +10,6 @@
     <%= item.name %> 
   </div>
   <div class="flex-none flex space-x-1">
-    <%= edit_button [:edit, item] %>
-    <%= delete_button item %>
+    <%= render "items/menu", item: item %>
   </div>
 </li>

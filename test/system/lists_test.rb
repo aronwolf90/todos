@@ -22,6 +22,7 @@ class ListsTest < ApplicationSystemTestCase
 
   test "should update List" do
     visit lists_url
+    click_on class: "dots-menu", match: :first
     click_on class: "edit", match: :first
 
     fill_in "Name", with: @list.name
@@ -32,6 +33,7 @@ class ListsTest < ApplicationSystemTestCase
 
   test "should destroy List" do
     visit lists_url
+    click_on class: "dots-menu", match: :first
     click_on class: "destroy", match: :first
 
     assert_text "List was successfully destroyed"
