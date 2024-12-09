@@ -13,6 +13,6 @@
   >
   <%= link_to "Show", list, "data-action": "dropdown#toggle", class: "show block px-4 py-2 hover:bg-gray-100" %>
   <%= link_to "Edit", [:edit, list], "data-action": "dropdown#toggle", class: "edit block px-4 py-2 hover:bg-gray-100" %>
-  <%= button_to "Delete", list, "data-action": "dropdown#toggle", method: :delete, class: "destroy block px-4 py-2 hover:bg-gray-100 w-full text-left text-red-600" %>
+  <%= button_to "Delete", list, data: { action: "dropdown#toggle", "turbo-action": "replace" }, method: :delete, class: "destroy block px-4 py-2 hover:bg-gray-100 w-full text-left text-red-600" %>
   </div>
 </div>
