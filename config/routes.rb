@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :lists do
+  resources :lists, path: "/" do
     resources :items, only: %i[new create]
   end
 
