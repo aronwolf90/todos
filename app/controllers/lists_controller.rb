@@ -22,7 +22,7 @@ class ListsController < ApplicationController
 
   # POST /lists or /lists.json
   def create
-    @list = List.new(list_params)
+    @list = Current.user.lists.new(list_params)
 
     if @list.save
       redirect_to @list, notice: "List was successfully created."

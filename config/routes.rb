@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :session
+  resources :passwords, param: :token
   resources :lists, only: [ :index, :create ], path: "/"
 
   resources :lists, except: [ :index, :create ] do

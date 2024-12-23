@@ -4,6 +4,9 @@ class ItemsTest < ApplicationSystemTestCase
   setup do
     @list = lists(:one)
     @item = items(:one)
+    @user = users(:one)
+
+    sign_in(@user)
   end
 
   test "should create item" do

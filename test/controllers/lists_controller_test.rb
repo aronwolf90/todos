@@ -1,8 +1,11 @@
-require "test_helper"
+require "application_integration_test"
 
-class ListsControllerTest < ActionDispatch::IntegrationTest
+class ListsControllerTest < ApplicationIntegrationTest
   setup do
     @list = lists(:one)
+    @user = users(:one)
+
+    sign_in(@user)
   end
 
   test "should get index" do
@@ -16,7 +19,7 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create list" do
-    assert_difference("List.count") do
+    assert_difference("@user.reload.lists.count") do
       post lists_url, params: { list: { name: @list.name } }
     end
 

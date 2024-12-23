@@ -1,9 +1,12 @@
-require "test_helper"
+require "application_integration_test"
 
-class ItemsControllerTest < ActionDispatch::IntegrationTest
+class ItemsControllerTest < ApplicationIntegrationTest
   setup do
     @list = lists(:one)
     @item = items(:one)
+    @user = users(:one)
+
+    sign_in(@user)
   end
 
   test "should get new" do

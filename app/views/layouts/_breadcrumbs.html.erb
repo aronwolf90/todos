@@ -1,25 +1,20 @@
-<nav class="flex pt-4 pb-4 border-b border-grep-500 bg-white w-full fixed">
-  <div class="container mx-auto px-5 flex">
-    <ol class="inline-flex items-center space-x-2 rtl:space-x-reverse">
-      <% @breadcrumbs.to_a.each.with_index do |breadcrumb, index| %>
-        <li class="inline-flex items-center">
-          <%= link_to breadcrumb[:path], class: "inline-flex items-center font-medium text-gray-700 hover:text-blue-600" do %>
-            <%= breadcrumb_icon(index.zero?) %>
-            <%= breadcrumb[:title] %>
-          <% end %>
-        </li>
+<ol class="inline-flex items-center space-x-2 rtl:space-x-reverse">
+  <% @breadcrumbs.to_a.each.with_index do |breadcrumb, index| %>
+    <li class="inline-flex items-center">
+      <%= link_to breadcrumb[:path], class: "inline-flex items-center font-medium text-gray-700 hover:text-blue-600" do %>
+        <%= breadcrumb_icon(index.zero?) %>
+        <%= breadcrumb[:title] %>
       <% end %>
-      <% if yield :title %>
-        <li>
-          <div class="flex items-center">
-            <%= breadcrumb_icon(@breadcrumbs.blank?) %>
-            <h1 class="ms-1 font-medium text-gray-500 dark:text-gray-400">
-              <%= yield :title %>
-            </h1>
-          </div>
-        </li>
-      <% end %>
-    </ol>
-  </div>
-</nav>
-<div class="h-16"></div>
+    </li>
+  <% end %>
+  <% if yield :title %>
+    <li>
+      <div class="flex items-center">
+        <%= breadcrumb_icon(@breadcrumbs.blank?) %>
+        <h1 class="ms-1 font-medium text-gray-500 dark:text-gray-400">
+          <%= yield :title %>
+        </h1>
+      </div>
+    </li>
+  <% end %>
+</ol>

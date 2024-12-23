@@ -1,7 +1,9 @@
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :selenium, using: :headless_chrome, screen_size: [ 1400, 1400 ]
+  driven_by :selenium,
+    using: ENV["DEBUG"] ? :chrome : :headless_chrome,
+    screen_size: [ 1400, 1400 ]
 
   def wait_until(time: Capybara.default_max_wait_time)
     Timeout.timeout(time) do
@@ -37,5 +39,13 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     }
 
     page.driver.browser.send(:bridge).send_command(params)
+  end
+
+  def sign_in(user)
+    visit root_path
+    fill_in "email_address", with: user.email_address
+    fill_in "password", with: "password"
+    click_on "Sign in"
+    assert_text "Lists"
   end
 end

@@ -1,0 +1,16 @@
+<% if turbo_native_app? %>
+  <%= render "layouts/main_menu" %>
+<% else %>
+  <nav class="flex pt-4 pb-4 border-b border-grep-500 bg-white w-full fixed">
+    <div class="container mx-auto px-5 flex">
+      <div class="flex-none">
+        <%= render "layouts/breadcrumbs" %>
+      </div>
+      <div class="grow"></div>
+      <div class="flex-none">
+        <%= render "layouts/main_menu" %>
+      </div>
+    </div>
+  </nav>
+  <div class="h-16"></div>
+<% end %>
