@@ -9,6 +9,26 @@
         "context": "default",
         "pull_to_refresh_enabled": true
       }
+    },
+    {
+      "patterns": [
+        "^/?$"
+      ],
+      "properties": {
+        "context": "default",
+        "pull_to_refresh_enabled": true,
+        "presentation": "replace_root"
+      }
+    },
+    {
+      "patterns": [
+        "^/session/new"
+      ],
+      "properties": {
+        "context": "default",
+        "pull_to_refresh_enabled": true,
+        "presentation": "replace_root"
+      }
     }
   ]
 }
