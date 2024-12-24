@@ -48,6 +48,12 @@ android {
             buildConfigField("String", "BASE_URL", "\"http://10.0.2.2:3000\"")
         }
     }
+
+    testOptions {
+        emulatorControl {
+            enable = true
+        }
+    }
 }
 
 dependencies {
@@ -62,4 +68,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation("androidx.test.espresso:espresso-device:1.0.1")
+    androidTestImplementation("androidx.test.espresso:espresso-web:3.6.1")
 }

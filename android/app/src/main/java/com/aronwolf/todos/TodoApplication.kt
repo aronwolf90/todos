@@ -1,8 +1,6 @@
 package com.aronwolf.todos
 
 import android.app.Application
-import android.util.Log
-import com.aronwolf.todos.WebFragment
 import dev.hotwire.core.bridge.BridgeComponentFactory
 import dev.hotwire.core.config.Hotwire
 import dev.hotwire.core.turbo.config.PathConfiguration
