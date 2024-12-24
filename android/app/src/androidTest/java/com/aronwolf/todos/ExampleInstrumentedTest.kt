@@ -1,6 +1,7 @@
 package com.aronwolf.todos
 
 import android.content.Intent
+import android.util.Log
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
@@ -41,7 +42,8 @@ class ExampleInstrumentedTest {
 
     @Test
     fun signIn() {
-        Thread.sleep(1000)
+        Log.w("TEST", "Started")
+        Thread.sleep(30000)
         onView(withText("Sign in")).check(matches(isDisplayed()))
 
         onWebView()
