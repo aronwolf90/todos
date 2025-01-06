@@ -25,7 +25,8 @@ class ListsController < ApplicationController
     @list = Current.user.lists.new(list_params)
 
     if @list.save
-      redirect_to @list, notice: "List was successfully created."
+      flash[:notice] = "List was successfully created."
+      render turbo_stream: turbo_stream.refresh(request_id: nil)
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,14 +34,11 @@ class ListsController < ApplicationController
 
   # PATCH/PUT /lists/1 or /lists/1.json
   def update
-    respond_to do |format|
-      if @list.update(list_params)
-        format.html { redirect_to @list, notice: "List was successfully updated." }
-        format.json { render :show, status: :ok, location: @list }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @list.errors, status: :unprocessable_entity }
-      end
+    if @list.update(list_params)
+      flash[:notice] = "List was successfully updated."
+      render turbo_stream: turbo_stream.refresh(request_id: nil)
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -48,10 +46,7 @@ class ListsController < ApplicationController
   def destroy
     @list.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to lists_path, status: :see_other, notice: "List was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to lists_path, status: :see_other, notice: "List was successfully destroyed."
   end
 
   private

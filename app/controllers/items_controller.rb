@@ -21,7 +21,8 @@ class ItemsController < ApplicationController
     @item = @list.items.new(item_params)
 
     if @item.save
-      redirect_to @list, notice: "Item was successfully created."
+      flash[:notice] = "Item was successfully created."
+      render turbo_stream: turbo_stream.refresh(request_id: nil)
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +30,11 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item.list, notice: !params["no_flash"] && "Item was successfully updated."
+      flash[:notice] = params["no_flash"] ? nil : "Item was successfully updated."
+      respond_to do |format|
+        format.turbo_stream { render turbo_stream: turbo_stream.refresh(request_id: nil) }
+        format.html { redirect_to @item.list }
+      end
     else
       render :edit, status: :unprocessable_entity
     end
