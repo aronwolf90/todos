@@ -1,15 +1,8 @@
-# README
-
-This is a simple To-Do app that I use to explore Hotwire Native for Android.
-
-## Setup
-
-Setup and start Rails:
-
-* Install ruby with one of the following methods:
+ethods:
   * `asdf install` (with `legacy_version_file = yes`)
   * `rbenv install`
 * `bin/setup`
+* `bin/rails db:fixtures:load`
 * `bin/dev`
 
 Setup android:

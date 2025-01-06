@@ -16,7 +16,7 @@ module ButtonsHelper
 
   def new_button(path)
     content_tag :div, "", class: "float-right w-12" do
-      link_to path, class: "new fixed bottom-3 float-right text-blue-500 rounded-full py-3 px-3 bg-blue-600 hover:bg-blue-700 text-white block font-medium" do
+      link_to path, class: "new fixed bottom-3 float-right text-blue-500 rounded-full py-3 px-3 bg-blue-600 hover:bg-blue-700 text-white block font-medium", data: { turbo_frame: "modal" } do
         icon "plus", class: "w-6 h-6"
       end
     end

@@ -8,3 +8,4 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "@stimulus-components/dropdown", to: "@stimulus-components--dropdown.js" # @3.0.0
 pin "stimulus-use" # @0.52.2
 pin "@hotwired/hotwire-native-bridge", to: "@hotwired--hotwire-native-bridge.js" # @1.0.0
+pin "@stimulus-components/dialog", to: "@stimulus-components--dialog.js" # @1.0.1

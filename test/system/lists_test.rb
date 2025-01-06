@@ -29,10 +29,10 @@ class ListsTest < ApplicationSystemTestCase
     within "main" do
       click_on class: "dots-menu", match: :first
       click_on class: "edit", match: :first
-
-      fill_in "Name", with: @list.name
-      click_on "Update List"
     end
+
+    fill_in "Name", with: @list.name
+    click_on "Update List"
 
     assert_text "List was successfully updated"
   end
