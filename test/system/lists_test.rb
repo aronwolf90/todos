@@ -25,6 +25,15 @@ class ListsTest < ApplicationSystemTestCase
     assert_text "List was successfully created"
   end
 
+  test "close modal on ouside click" do
+    visit lists_url
+    click_on class: "new"
+
+    find("body").click
+
+    assert_no_css "dialog"
+  end
+
   test "should update List" do
     visit lists_url
 
