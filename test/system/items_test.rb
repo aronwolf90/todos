@@ -13,6 +13,8 @@ class ItemsTest < ApplicationSystemTestCase
     visit list_url(@list)
     click_on class: "new"
 
+    assert_css "#item_name", focused: true
+
     fill_in "Name", with: @item.name
     click_on "Create Item"
 
@@ -26,6 +28,8 @@ class ItemsTest < ApplicationSystemTestCase
       click_on class: "dots-menu", match: :first
       click_on class: "edit", match: :first
     end
+
+    assert_css "#item_name", focused: true
 
     fill_in "Name", with: @item.name
     click_on "Update Item"
