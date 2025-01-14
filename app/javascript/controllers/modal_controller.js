@@ -5,4 +5,12 @@ export default class extends Controller {
     this.element.parentElement.removeAttribute("src")
     this.element.remove()
   }
+
+  clickOutside() {
+    if(document.getElementById("modal-content").contains(event.target)) {
+      return
+    }
+
+    this.hideModal()
+  }
 }
