@@ -6,8 +6,8 @@ export default class extends Controller {
     this.element.remove()
   }
 
-  clickOutside() {
-    if(document.getElementById("modal-content").contains(event.target)) {
+  clickOutside(event) {
+    if(this.element.getElementById("modal-content").contains(event.target)) {
       return
     }
 
