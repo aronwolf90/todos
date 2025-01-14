@@ -17,6 +17,8 @@ class ListsTest < ApplicationSystemTestCase
     visit lists_url
     click_on class: "new"
 
+    assert_css "#list_name", focused: true
+
     fill_in "Name", with: @list.name
     click_on "Create List"
 
@@ -30,6 +32,8 @@ class ListsTest < ApplicationSystemTestCase
       click_on class: "dots-menu", match: :first
       click_on class: "edit", match: :first
     end
+
+    assert_css "#list_name", focused: true
 
     fill_in "Name", with: @list.name
     click_on "Update List"
