@@ -1,8 +1,4 @@
 module ButtonsHelper
-  def turbo_native_app?
-    request.user_agent.to_s.include? "Turbo Native"
-  end
-
   def icon(name, **args)
     file_path = File.read(Rails.root.join("app", "assets", "icons", "#{name}.svg"))
     svg_file = Nokogiri::HTML::DocumentFragment.parse(file_path).at_css("svg")
