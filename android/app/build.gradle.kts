@@ -39,13 +39,13 @@ android {
         create("remoteServer") {
             dimension = "default"
             isDefault = true
-            buildConfigField("String", "BASE_URL", "\"https://todos.webcloudpower.com\"")
+            buildConfigField("String", "BASE_URL", "\"https://todos.webcloudpower.com/lists\"")
         }
         create("localServer") {
             dimension = "default"
             applicationIdSuffix = "localServer"
             versionNameSuffix = "-localServer"
-            buildConfigField("String", "BASE_URL", "\"http://10.0.2.2:3000\"")
+            buildConfigField("String", "BASE_URL", "\"http://10.0.2.2:3000/lists\"")
         }
     }
 

@@ -17,6 +17,6 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
       }
     end
 
-    assert_redirected_to root_url
+    assert_redirected_to lists_url
   end
 end
