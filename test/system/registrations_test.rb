@@ -6,7 +6,8 @@ class RegistrationsTest < ApplicationSystemTestCase
   end
 
   test "should create user" do
-    visit new_registration_url
+    visit root_url
+    click_on "Sign up"
 
     fill_in "Email", with: "test@example.com"
     fill_in "Password", with: "testtest"
@@ -17,7 +18,8 @@ class RegistrationsTest < ApplicationSystemTestCase
   end
 
   test "when form is invalid, shows error" do
-    visit new_registration_url
+    visit root_url
+    click_on "Sign up"
 
     fill_in "Email", with: @user.email_address
     fill_in "Password", with: "testtest"

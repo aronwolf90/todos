@@ -7,6 +7,7 @@ class SessionTest < ApplicationSystemTestCase
 
   test "signin in and signout" do
     visit root_url
+    click_on "Log in"
 
     fill_in "email_address", with: @user.email_address
     fill_in "password", with: "password"
