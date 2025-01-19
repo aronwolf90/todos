@@ -5,25 +5,16 @@
   </head>
 
   <body>
-    <% if !turbo_native_app? %>
-      <%= render "layouts/homepage_navbar" %>
-    <% end %>
-    <main class="container mx-auto mt-2 px-5 flex">
-      <div class="w-full h-full">
-        <% if notice.present? %>
-          <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-        <% end %>
-
-        <% if alert = flash[:alert] %>
-          <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
-        <% end %>
-
-        <% if !turbo_native_app? %>
-          <h1 class="font-bold text-2xl"><%= yield :title %></h1>
-        <% end %>
-
+    <div class="min-h-screen flex flex-col">
+      <% if !turbo_native_app? %>
+        <%= render "layouts/homepage_navbar" %>
+      <% end %>
+      <main class="grow flex flex-col">
         <%= yield %>
-      </div>
-    </main>
+      </main>
+    </div>
+    <footer class="w-full p-5 bg-black text-white space-x-4">
+      aronwolf90@gmail.com
+    </footer>
   </body>
 </html>
