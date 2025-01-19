@@ -1,8 +1,8 @@
 <div class="container mx-auto mt-3">
-  <%= render "layouts/title" %>
   <%= render "layouts/flash" %>
 
   <% content_for :title, "Sign in" %>
+  <%= render "layouts/title" %>
   
   <%= form_with url: session_url, class: "contents", data: { "turbo-action": "replace" } do |form| %>
     <div class="my-5">

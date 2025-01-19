@@ -1,8 +1,8 @@
 <div class="container mx-auto mt-3">
-  <%= render "layouts/title" %>
   <%= render "layouts/flash" %>
 
   <% content_for :title, "New account" %>
+  <%= render "layouts/title" %>
   
   <%= form_with(model: @user, class: "contents", url: registration_url) do |form| %>
     <% if @user.errors.any? %>
