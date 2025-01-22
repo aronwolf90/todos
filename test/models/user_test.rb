@@ -13,4 +13,9 @@ class UserTest < ActiveSupport::TestCase
     user.password_confirmation = "invalid"
     assert user.invalid?
   end
+
+  test "#items" do
+    assert_includes users(:one).items, items(:one)
+    assert_not_includes users(:one).items, items(:third)
+  end
 end
