@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get :impresum, to: "impresum#index"
+
   resource :registration
   resource :session
   resources :passwords, param: :token
