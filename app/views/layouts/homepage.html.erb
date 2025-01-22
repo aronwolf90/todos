@@ -13,8 +13,9 @@
         <%= yield %>
       </main>
     </div>
-    <footer class="w-full p-5 bg-black text-white space-x-4 items-center flex flex-col md:items-start">
-      aronwolf90@gmail.com
+    <footer class="w-full p-5 bg-black text-white space-x-4 items-center flex flex-col md:flex-row md:items-start">
+      <a href="mailto:aronwolf90@gmail.com" class="hover:text-blue-500">aronwolf90@gmail.com</a>
+      <%= link_to "Impresum", impresum_path, class: "hover:text-blue-500" %>
     </footer>
   </body>
 </html>
