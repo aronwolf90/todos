@@ -10,7 +10,10 @@ class ListsControllerTest < ApplicationIntegrationTest
 
   test "should get index" do
     get lists_url
+
     assert_response :success
+    assert_includes response.body, "one"
+    assert_not_includes response.body, "third"
   end
 
   test "should get new" do

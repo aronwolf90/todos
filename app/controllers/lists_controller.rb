@@ -4,7 +4,7 @@ class ListsController < ApplicationController
 
   # GET /lists or /lists.json
   def index
-    @lists = List.all
+    @lists = Current.user.lists
   end
 
   # GET /lists/1 or /lists/1.json
@@ -52,7 +52,7 @@ class ListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_list
-      @list = List.find(params.expect(:id))
+      @list = Current.user.lists.find(params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.

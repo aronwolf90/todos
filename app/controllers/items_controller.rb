@@ -1,14 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_breadcrumbs
   before_action :set_list, only: %i[ new create ]
-  before_action :set_item, only: %i[ show edit update destroy ]
-
-  def index
-    @items = Item.all
-  end
-
-  def show
-  end
+  before_action :set_item, only: %i[ edit update destroy ]
 
   def new
     @item = Item.new
@@ -48,11 +41,11 @@ class ItemsController < ApplicationController
 
   private
     def set_list
-      @list = List.find(params.expect(:list_id))
+      @list = Current.user.lists.find(params.expect(:list_id))
     end
 
     def set_item
-      @item = Item.find(params.expect(:id))
+      @item = Current.user.items.find(params.expect(:id))
     end
 
     def item_params
