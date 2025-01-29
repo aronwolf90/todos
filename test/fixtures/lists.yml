@@ -3,11 +3,17 @@
 one:
   name: one
   user: one 
+  created_at: <%= 3.minutes.ago %>
+  updated_at: <%= 3.minutes.ago %>
 
 two:
   name: two
   user: one 
+  created_at: <%= 2.minutes.ago %>
+  updated_at: <%= 2.minutes.ago %>
 
 third:
   name: third
   user: two 
+  created_at: <%= 1.minute.ago %>
+  updated_at: <%= 1.minute.ago %>

@@ -9,10 +9,15 @@ class ListsControllerTest < ApplicationIntegrationTest
   end
 
   test "should get index" do
+    List.create!(name: "new", user: @user)
+
     get lists_url
 
     assert_response :success
-    assert_includes response.body, "one"
+
+    assert_select "main li:nth-of-type(1) a", "new"
+    assert_select "main li:nth-of-type(2) a", "two"
+    assert_select "main li:nth-of-type(3) a", "one"
     assert_not_includes response.body, "third"
   end
 
@@ -30,8 +35,12 @@ class ListsControllerTest < ApplicationIntegrationTest
   end
 
   test "should show list" do
+    Item.create!(name: "new", list: @list)
+
     get list_url(@list)
     assert_response :success
+
+    assert_select "main li:first-of-type [data-test='item-name']", "new"
   end
 
   test "should get edit" do
