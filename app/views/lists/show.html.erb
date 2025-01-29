@@ -1,7 +1,7 @@
 <% content_for :title, @list.name %>
 
 <ul class="items w-full divide-y divide-gray-200">
-  <% @list.items.each do |item| %>
+  <% @list.items.order(created_at: :desc).each do |item| %>
     <%= render item %>
   <% end %>
 </ul>
