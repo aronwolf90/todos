@@ -13,4 +13,8 @@ module ApplicationHelper
 
     svg_file.to_html.html_safe
   end
+
+  def contact_link(**options)
+    link_to "aronwolf90@gmail.com", "mailto:aronwolf90@gmail.com", **options
+  end
 end
