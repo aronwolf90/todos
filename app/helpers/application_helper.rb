@@ -15,6 +15,7 @@ module ApplicationHelper
   end
 
   def contact_link(**options)
-    link_to "aronwolf90@gmail.com", "mailto:aronwolf90@gmail.com", **options
+    email = Rails.configuration.x.contact_email
+    link_to "#{email}", "mailto:#{email}", **options
   end
 end
