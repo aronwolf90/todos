@@ -13,4 +13,9 @@ module ApplicationHelper
 
     svg_file.to_html.html_safe
   end
+
+  def contact_link(**options)
+    email = Rails.configuration.x.contact_email
+    link_to "#{email}", "mailto:#{email}", **options
+  end
 end

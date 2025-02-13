@@ -23,5 +23,7 @@ module Todos
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.x.contact_email = "aronwolf90@gmail.com"
   end
 end
