@@ -12,6 +12,7 @@ class RegistrationsTest < ApplicationSystemTestCase
     fill_in "Email", with: "test@example.com"
     fill_in "Password", with: "testtest"
     fill_in "Password confirmation", with: "testtest"
+    check "I agree to the Terms of Service and Privacy Policy"
     click_on "Create account"
 
     assert_text "Registered successfully."

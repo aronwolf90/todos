@@ -5,7 +5,8 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(
       email_address: "test@example.com",
       password: "testtest",
-      password_confirmation: "testtest"
+      password_confirmation: "testtest",
+      terms_confirmed: true
     )
 
     assert user.valid?
