@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get :impresum, to: "impresum#index"
   get :privacy, to: "privacy#index"
+  get :terms, to: "terms#index"
 
   resource :registration
   resource :session
