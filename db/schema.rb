@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_23_033955) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_22_023459) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "list_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_23_033955) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "terms_confirmed"
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 

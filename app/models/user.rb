@@ -7,4 +7,5 @@ class User < ApplicationRecord
   normalizes :email_address, with: ->(e) { e.strip.downcase }
 
   validates :email_address, uniqueness: true
+  validates :terms_confirmed, presence: true, acceptance: true
 end

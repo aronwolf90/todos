@@ -29,6 +29,13 @@
       <%= form.label :password_confirmation %>
       <%= form.password_field :password_confirmation, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full", required: true, autocomplete: "new-password", maxlength: 72 %>
     </div>
+
+    <div class="my-5">
+      <%= form.check_box :terms_confirmed, class: "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 focus:ring-2 " %>
+      <%= form.label :terms_confirmed do %>
+        I agree to the <%= link_to "Terms of Serivice", terms_path, class: "text-blue-600 hover:underline" %> and <%= link_to "Privacy Policy", privacy_path, class: "text-blue-600 hover:underline" %>
+      <% end %>
+    </div>
   
     <div class="inline">
       <%= form.submit "Create account", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>

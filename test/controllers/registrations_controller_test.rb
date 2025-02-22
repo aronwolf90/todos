@@ -12,7 +12,8 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
         user: {
           email_address: "test@example.com",
           password: "testtest",
-          password_confirmation: "testtest"
+          password_confirmation: "testtest",
+          terms_confirmed: true
         }
       }
     end
