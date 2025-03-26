@@ -1,0 +1,8 @@
+<% content_for :title, "Profile" %>
+
+<div class="text-center mt-4">
+  You can delete the account and and associated data for
+  <%= Current.user.email_address %> by clicking on the following button.
+
+  <%= button_to "Delete account", profile_path, method: :delete, class: "mt-2 rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium max-sm:w-full mt-4", data: { turbo_confirm: "Are you sure? This action cannot be undone and will permanently delete all your data." } %>
+</div>

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :items, only: %i[edit update destroy]
+  resource :profile, only: %i[show destroy]
 
   get "up" => "rails/health#show", as: :rails_health_check
 
