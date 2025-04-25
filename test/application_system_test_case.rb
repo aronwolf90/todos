@@ -5,13 +5,6 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     using: ENV["DEBUG"] ? :chrome : :headless_chrome,
     screen_size: [ 1400, 1400 ]
 
-  setup do
-    # HACK: needed to make chrome work again.
-    # See https://github.com/teamcapybara/capybara/issues/2800
-    page.save_screenshot("tmp/hack.png")
-    sleep 0.1
-  end
-
   def wait_until(time: Capybara.default_max_wait_time)
     Timeout.timeout(time) do
       until value = yield
