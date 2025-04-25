@@ -18,6 +18,6 @@ class SessionTest < ApplicationSystemTestCase
     click_on id: "main-menu"
     click_on "Sign out"
 
-    assert_text "Sign in"
+    assert_text "Login"
   end
 end
