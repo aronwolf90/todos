@@ -7,10 +7,10 @@
    viewBox="0 0 2 2"
    version="1.1"
    id="svg1"
-   inkscape:export-filename="icon.svg"
+   inkscape:export-filename="foregroundd.svg"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
-   sodipodi:docname="icon.svg"
+   sodipodi:docname="foregroundd.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -76,14 +76,14 @@
        style="opacity:1;fill:none;fill-opacity:1;stroke:#3b82f6;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
        d="M 3.1663523,4.0980968 C 3.2953226,3.9428061 3.4242928,3.7875153 3.5532631,3.6322246"
        id="path54"
-       transform="matrix(1.6886197,0,0,1.6886197,-4.4711803,-5.5316613)"
+       transform="translate(-2.2455827,-2.9342281)"
        inkscape:original-d="M 3.1663523,4.0980968 3.5532631,3.6322246"
        inkscape:path-effect="#path-effect54" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#3b82f6;stroke-width:0.2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
        d="m 2.9689488,3.837524 c 0.057905,0.084226 0.1158101,0.1684511 0.1737151,0.2526766"
        id="path55"
-       transform="matrix(1.6886197,0,0,1.6886197,-4.4711803,-5.5316613)"
+       transform="translate(-2.2455827,-2.9342281)"
        inkscape:original-d="M 2.9689488,3.837524 3.1426639,4.0902006"
        inkscape:path-effect="#path-effect55" />
   </g>
