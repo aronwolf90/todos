@@ -40,12 +40,14 @@ android {
             dimension = "default"
             isDefault = true
             buildConfigField("String", "BASE_URL", "\"https://todos.webcloudpower.com/lists\"")
+            resValue("string", "app_name", "Litensio")
         }
         create("localServer") {
             dimension = "default"
             applicationIdSuffix = "localServer"
             versionNameSuffix = "-localServer"
             buildConfigField("String", "BASE_URL", "\"http://10.0.2.2:3000/lists\"")
+            resValue("string", "app_name", "Litensio local")
         }
     }
 
