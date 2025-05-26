@@ -1,5 +1,4 @@
 {
-  "settings": {},
   "rules": [
     {
       "patterns": [
@@ -28,6 +27,26 @@
         "context": "default",
         "pull_to_refresh_enabled": true,
         "presentation": "replace_root"
+      }
+    },
+    {
+      "patterns": [
+        "/new$"
+      ],
+      "properties": {
+        "context": "modal",
+        "uri": "hotwire://fragment/web/modal/sheet",
+        "pull_to_refresh_enabled": false
+      }
+    },
+    {
+      "patterns": [
+        "/edit$"
+      ],
+      "properties": {
+        "context": "modal",
+        "uri": "hotwire://fragment/web/modal/sheet",
+        "pull_to_refresh_enabled": false
       }
     }
   ]

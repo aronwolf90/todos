@@ -3,13 +3,16 @@ require "test_helper"
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   driven_by :selenium,
     using: ENV["DEBUG"] ? :chrome : :headless_chrome,
-    screen_size: [ 1400, 1400 ]
+    screen_size: [ 1400, 1400 ] do |options|
+      options.add_argument("guest")
+    end
 
-  setup do
-    # HACK: needed to make chrome work again.
-    # See https://github.com/teamcapybara/capybara/issues/2800
-    page.save_screenshot("tmp/hack.png")
-    sleep 0.1
+  teardown do
+    js_logs = page.driver.browser.logs.get(:browser).reject do |log_message|
+      log_message.message.include?("the server responded with a status of 422")
+    end
+
+    assert js_logs.map(&:level).none?("SEVERE"), js_logs.map(&:message).join("\n")
   end
 
   def wait_until(time: Capybara.default_max_wait_time)

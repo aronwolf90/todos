@@ -32,6 +32,7 @@ class ItemsTest < ApplicationSystemTestCase
     assert_css "#item_name", focused: true
 
     fill_in "Name", with: @item.name
+
     click_on "Update Item"
 
     assert_text "Item was successfully updated"
@@ -51,6 +52,8 @@ class ItemsTest < ApplicationSystemTestCase
         @item.reload.checked
       end
     end
+
+    assert_current_path list_path(@item.list)
   end
 
   test "should destroy Item" do

@@ -26,7 +26,7 @@ class ListsController < ApplicationController
 
     if @list.save
       flash[:notice] = "List was successfully created."
-      render turbo_stream: turbo_stream.refresh(request_id: nil)
+      resume_or_redirect_to lists_url
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class ListsController < ApplicationController
   def update
     if @list.update(list_params)
       flash[:notice] = "List was successfully updated."
-      render turbo_stream: turbo_stream.refresh(request_id: nil)
+      resume_or_redirect_to lists_url
     else
       render :edit, status: :unprocessable_entity
     end
