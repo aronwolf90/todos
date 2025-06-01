@@ -21,22 +21,13 @@
     },
     {
       "patterns": [
-        "^/session/new"
-      ],
-      "properties": {
-        "context": "default",
-        "pull_to_refresh_enabled": true,
-        "presentation": "replace_root"
-      }
-    },
-    {
-      "patterns": [
         "/new$"
       ],
       "properties": {
         "context": "modal",
         "uri": "hotwire://fragment/web/modal/sheet",
-        "pull_to_refresh_enabled": false
+        "pull_to_refresh_enabled": false,
+        "presentation": "default"
       }
     },
     {
@@ -46,7 +37,19 @@
       "properties": {
         "context": "modal",
         "uri": "hotwire://fragment/web/modal/sheet",
-        "pull_to_refresh_enabled": false
+        "pull_to_refresh_enabled": false,
+        "presentation": "default"
+      }
+    },
+    {
+      "patterns": [
+        "^/session/new"
+      ],
+      "properties": {
+        "context": "default",
+        "uri": "hotwire://fragment/web",
+        "pull_to_refresh_enabled": true,
+        "presentation": "replace_root"
       }
     }
   ]
