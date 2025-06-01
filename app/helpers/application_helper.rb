@@ -3,8 +3,8 @@ module ApplicationHelper
     request.user_agent.to_s.include? "Turbo Native"
   end
 
-  def hotwire_native_modal?
-    request.user_agent.to_s.include?("overflow-menu")
+  def feature_flag_native_modals_enabled?
+    request.user_agent.to_s.include?("feature-flag-native-modals")
   end
 
   def icon(name, **args)

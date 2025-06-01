@@ -33,5 +33,6 @@ class TodoApplication : Application() {
 
         Hotwire.config.debugLoggingEnabled = true
         Hotwire.config.webViewDebuggingEnabled = true
+        Hotwire.config.applicationUserAgentPrefix = "feature-flag-native-modals;"
     }
 }

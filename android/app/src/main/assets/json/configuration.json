@@ -6,7 +6,9 @@
       ],
       "properties": {
         "context": "default",
-        "pull_to_refresh_enabled": true
+        "uri": "hotwire://fragment/web",
+        "pull_to_refresh_enabled": true,
+        "presentation": "default"
       }
     },
     {
@@ -15,6 +17,7 @@
       ],
       "properties": {
         "context": "default",
+        "uri": "hotwire://fragment/web",
         "pull_to_refresh_enabled": true,
         "presentation": "replace_root"
       }

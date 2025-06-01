@@ -2,7 +2,7 @@ require "test_helper"
 
 class ModalHelperTest < ActionView::TestCase
   test "modal_close_button returns turbo_resume_historical_location_url link on hotwire native app" do
-    request.user_agent += ";overflow-menu"
+    request.user_agent += "feature-flag-native-modals;"
 
     html = controller.helpers.modal_close_button
 

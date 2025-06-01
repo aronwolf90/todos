@@ -3,3 +3,4 @@ ignoreRegExpList:
   - clazz
   - hotwire
   - REFERER
+  - aronwolf
