@@ -31,7 +31,7 @@ class ListsControllerTest < ApplicationIntegrationTest
       post lists_url, params: { list: { name: @list.name } }
     end
 
-    assert_turbo_stream action: :refresh
+    assert_redirected_to lists_url
   end
 
   test "should show list" do
@@ -51,7 +51,7 @@ class ListsControllerTest < ApplicationIntegrationTest
   test "should update list" do
     patch list_url(@list), params: { list: { name: @list.name } }
 
-    assert_turbo_stream action: :refresh
+    assert_redirected_to lists_url
   end
 
   test "should destroy list" do

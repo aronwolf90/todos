@@ -1,9 +1,8 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  hideModal() {
-    this.element.parentElement.removeAttribute("src")
-    this.element.remove()
+  close() {
+    this.element.removeAttribute("open")
   }
 
   clickOutside(event) {
@@ -11,6 +10,16 @@ export default class extends Controller {
       return
     }
 
-    this.hideModal()
+    this.close()
+  }
+
+  open() {
+    this.element.setAttribute("open", "true")
+
+    let element_to_focus = this.element.querySelector('[autofocus]')
+
+    if (element_to_focus) {
+      element_to_focus.focus()
+    }
   }
 }

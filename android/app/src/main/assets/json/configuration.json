@@ -1,5 +1,4 @@
 {
-  "settings": {},
   "rules": [
     {
       "patterns": [
@@ -22,10 +21,33 @@
     },
     {
       "patterns": [
+        "/new$"
+      ],
+      "properties": {
+        "context": "modal",
+        "uri": "hotwire://fragment/web/modal/sheet",
+        "pull_to_refresh_enabled": false,
+        "presentation": "default"
+      }
+    },
+    {
+      "patterns": [
+        "/edit$"
+      ],
+      "properties": {
+        "context": "modal",
+        "uri": "hotwire://fragment/web/modal/sheet",
+        "pull_to_refresh_enabled": false,
+        "presentation": "default"
+      }
+    },
+    {
+      "patterns": [
         "^/session/new"
       ],
       "properties": {
         "context": "default",
+        "uri": "hotwire://fragment/web",
         "pull_to_refresh_enabled": true,
         "presentation": "replace_root"
       }

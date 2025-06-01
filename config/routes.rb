@@ -11,7 +11,12 @@ Rails.application.routes.draw do
     resources :items, only: %i[new create]
   end
 
-  resources :items, only: %i[edit update destroy]
+  resources :items, only: %i[edit update destroy] do
+    scope module: "items" do
+      resource :check, only: :update
+    end
+  end
+
   resource :profile, only: %i[show destroy]
 
   get "up" => "rails/health#show", as: :rails_health_check

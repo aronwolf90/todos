@@ -7,6 +7,7 @@ import dev.hotwire.core.turbo.config.PathConfiguration
 import dev.hotwire.navigation.config.defaultFragmentDestination
 import dev.hotwire.navigation.config.registerBridgeComponents
 import dev.hotwire.navigation.config.registerFragmentDestinations
+import dev.hotwire.navigation.fragments.HotwireWebBottomSheetFragment
 
 class TodoApplication : Application() {
     override fun onCreate() {
@@ -22,7 +23,8 @@ class TodoApplication : Application() {
         Hotwire.defaultFragmentDestination = WebFragment::class
 
         Hotwire.registerFragmentDestinations(
-            WebFragment::class
+            WebFragment::class,
+            HotwireWebBottomSheetFragment::class
         )
 
         Hotwire.registerBridgeComponents(
@@ -31,6 +33,5 @@ class TodoApplication : Application() {
 
         Hotwire.config.debugLoggingEnabled = true
         Hotwire.config.webViewDebuggingEnabled = true
-        Hotwire.config.userAgent = "TodoHotwire; ${Hotwire.config.userAgentSubstring()}"
     }
 }

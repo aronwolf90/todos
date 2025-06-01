@@ -1,5 +1,5 @@
 <li class="flex h-14 items-center">
-  <%= form_with model: item, data: { controller: "form" }, class: "pr-2 w-6" do |form| %>
+  <%= form_with model: item, url: [item, :check], data: { controller: "form" }, class: "pr-2 w-6" do |form| %>
     <%= form.check_box :checked, data: { action: "form#submitCheckbox" }, class: "border-gray-500 rounded" %>
     <div class="status hidden">
       <%= icon "spinner", class: "h-4 w-4" %>
