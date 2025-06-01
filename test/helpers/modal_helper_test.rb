@@ -1,17 +1,17 @@
 require "test_helper"
 
 class ModalHelperTest < ActionView::TestCase
-  test "modal_close_button returns recede_historical_location link on hotwive native app" do
+  test "modal_close_button returns recede_historical_location link on hotwire native app" do
     request.user_agent += ";overflow-menu"
 
     html = controller.helpers.modal_close_button
 
-    assert_includes html, "recede_historical_location"
+    assert_includes html, "resume_historical_location"
     assert_includes html, "<a"
   end
 
   test "modal_close_button returns a button when it is inside a web modal" do
-    request.headers["Turbo-Frame"] = true
+    request.headers["Turbo-Frame"] = "modal"
 
     assert_includes controller.helpers.modal_close_button, "button"
   end

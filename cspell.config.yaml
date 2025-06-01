@@ -1,0 +1,5 @@
+ignoreRegExpList:
+  - rubocop
+  - clazz
+  - hotwire
+  - REFERER

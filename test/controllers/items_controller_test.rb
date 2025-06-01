@@ -19,7 +19,7 @@ class ItemsControllerTest < ApplicationIntegrationTest
       post list_items_url(@list), params: { item: { name: @item.name } }
     end
 
-    assert_turbo_stream action: :refresh
+    assert_redirected_to list_url(@item.list)
   end
 
   test "should get edit" do
@@ -28,9 +28,9 @@ class ItemsControllerTest < ApplicationIntegrationTest
   end
 
   test "should update item with flash message" do
-    patch item_url(@item, format: :turbo_stream), params: { item: { name: "new name" } }
+    patch item_url(@item), params: { item: { name: "new name" } }
 
-    assert_turbo_stream action: :refresh
+    assert_redirected_to list_url(@item.list)
     assert_equal @item.reload.name, "new name"
     assert_equal "Item was successfully updated.", flash["notice"]
   end
