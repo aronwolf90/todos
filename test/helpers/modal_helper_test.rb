@@ -1,7 +1,7 @@
 require "test_helper"
 
 class ModalHelperTest < ActionView::TestCase
-  test "modal_close_button returns recede_historical_location link on hotwire native app" do
+  test "modal_close_button returns resume_historical_location link on hotwire native app" do
     request.user_agent += ";overflow-menu"
 
     html = controller.helpers.modal_close_button
