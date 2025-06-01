@@ -12,7 +12,7 @@ module ModalHelper
             "ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
     text = "Cancel"
 
-    if hotwire_native_modal?
+    if feature_flag_native_modals_enabled?
       link_to text, turbo_resume_historical_location_url, class: clazz, "data-turbo-frame": "_top"
     elsif web_modal?
       button_tag text, class: clazz, "data-action": "modal#close", type: "button"

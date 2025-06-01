@@ -16,19 +16,24 @@ module ButtonsHelper
             "text-white block font-medium"
 
     content_tag :div, "", class: "float-right w-12" do
-      link_to path, class: clazz, data: new_button_data do
+      link_to path, class: clazz, data: button_data do
         icon "plus", class: "w-6 h-6"
       end
     end
   end
 
+  def edit_button(path)
+    link_to "Edit", path, data: button_data({ action: "dropdown#toggle" }),
+            class: "edit block px-4 py-2 hover:bg-gray-100"
+  end
+
   private
 
-  def new_button_data
-    if hotwire_native_modal?
-      {}
+  def button_data(data = {})
+    if feature_flag_native_modals_enabled?
+      data
     else
-      { turbo_frame: "modal" }
+      data.merge({ turbo_frame: "modal" })
     end
   end
 end
