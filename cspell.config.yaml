@@ -9,3 +9,9 @@ ignoreRegExpList:
   - pidfiles
   - pids
   - importmap
+  - androidx
+  - proguard
+  - Litensio
+  - androidx
+  - appcompat
+  - constraintlayout
