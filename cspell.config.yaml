@@ -4,3 +4,8 @@ ignoreRegExpList:
   - hotwire
   - REFERER
   - aronwolf
+  - autofocus
+  - logfiles
+  - pidfiles
+  - pids
+  - importmap
