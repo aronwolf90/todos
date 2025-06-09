@@ -14,6 +14,9 @@ class InputTest < ApplicationSystemTestCase
   test "on auto focus moves cursor to end" do
     visit edit_list_url(@list)
 
+    autofocus_element_exists = page.evaluate_script("!!document.querySelector('[autofocus]')")
+    assert autofocus_element_exists, "Autofocus element should exist on the page"
+
     position = page.evaluate_script("document.querySelector('[autofocus]').selectionStart")
 
     assert_equal @list.name.size, position, "Cursor should be positioned at the end of the input value"
