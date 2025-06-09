@@ -38,3 +38,6 @@
 
 # Ignore android studio config files
 android/.idea
+
+# Ignore android builds
+android/app/remoteServer

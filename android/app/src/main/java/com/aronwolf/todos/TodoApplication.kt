@@ -24,7 +24,7 @@ class TodoApplication : Application() {
 
         Hotwire.registerFragmentDestinations(
             WebFragment::class,
-            HotwireWebBottomSheetFragment::class
+            WebModalSheet::class
         )
 
         Hotwire.registerBridgeComponents(
