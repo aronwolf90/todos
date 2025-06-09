@@ -16,6 +16,6 @@ class InputTest < ApplicationSystemTestCase
 
     position = page.evaluate_script("document.querySelector('[autofocus]').selectionStart")
 
-    assert_operator position, :>,  0
+    assert_equal @list.name.size, position, "Cursor should be positioned at the end of the input value"
   end
 end
