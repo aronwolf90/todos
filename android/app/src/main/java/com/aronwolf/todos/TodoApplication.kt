@@ -7,7 +7,6 @@ import dev.hotwire.core.turbo.config.PathConfiguration
 import dev.hotwire.navigation.config.defaultFragmentDestination
 import dev.hotwire.navigation.config.registerBridgeComponents
 import dev.hotwire.navigation.config.registerFragmentDestinations
-import dev.hotwire.navigation.fragments.HotwireWebBottomSheetFragment
 
 class TodoApplication : Application() {
     override fun onCreate() {

@@ -13,7 +13,7 @@ module ModalHelper
     text = "Cancel"
 
     if feature_flag_native_modals_enabled?
-      link_to text, turbo_resume_historical_location_url, class: clazz, "data-turbo-frame": "_top"
+      nil
     elsif web_modal?
       button_tag text, class: clazz, "data-action": "modal#close", type: "button"
     elsif previous_page_exists?
