@@ -7,6 +7,6 @@ import dev.hotwire.navigation.fragments.HotwireWebBottomSheetFragment
 @HotwireDestinationDeepLink(uri = "hotwire://fragment/web/modal/sheet")
 class WebModalSheet : HotwireWebBottomSheetFragment() {
     override fun onWebViewAttached(webView: HotwireWebView) {
-        webView.requestFocus();
+        webView.requestFocus()
     }
 }

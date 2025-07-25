@@ -1,5 +1,5 @@
 <%= form_with(model: list, class: "contents", data: { "turbo-action": "replace", "turbo-frame": "_top" }) do |form| %>
-  <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+  <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 native:pt-0">
     <% if list.errors.any? %>
       <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
         <h2><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h2>
@@ -12,10 +12,8 @@
       </div>
     <% end %>
 
-    <div class="my-5">
-      <%= form.label :name %>
-      <%= form.text_field :name, autofocus: true, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
-    </div>
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <%= modal_footer do %>

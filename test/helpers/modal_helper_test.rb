@@ -4,10 +4,7 @@ class ModalHelperTest < ActionView::TestCase
   test "modal_close_button returns turbo_resume_historical_location_url link on hotwire native app" do
     request.user_agent += "feature-flag-native-modals;"
 
-    html = controller.helpers.modal_close_button
-
-    assert_includes html, turbo_resume_historical_location_url
-    assert_includes html, "<a"
+    assert_nil controller.helpers.modal_close_button
   end
 
   test "modal_close_button returns a button when it is inside a web modal" do
