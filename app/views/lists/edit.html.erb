@@ -1,3 +1,5 @@
+<% content_for :title, "Edit list" %>
+
 <%= turbo_frame_tag "modal" do %>
   <%= render "form", list: @list %>
 <% end %>

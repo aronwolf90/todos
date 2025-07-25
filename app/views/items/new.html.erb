@@ -1,3 +1,5 @@
+<% content_for :title, "New item" %>
+
 <%= turbo_frame_tag "modal" do %>
   <%= render "form", item: @item %>
 <% end %>
