@@ -41,3 +41,7 @@ android/.idea
 
 # Ignore android builds
 android/app/remoteServer
+
+# Fastlane files
+fastlane/report.xml
+fastlane-credentials.json

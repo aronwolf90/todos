@@ -1,0 +1,1 @@
+This app allows you to manage your daily todos or shopping items. The main difference to many other similar applications is, that you can also manage them from your desktop computer under https://todos.webcloudpower.com.
